@@ -1,0 +1,20 @@
+<!-- book_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>Author: {{ book.author }}</p>
+    <p>Status: {% if book.status %}Available{% else %}Not Available{% endif %}</p>
+    <h2>Rental History</h2>
+    <ul>
+        {% for record in rental_records %}
+            <li>{{ record.borrower.username }} - {{ record.rental_date }} - {% if record.return_date %}Returned on {{ record.return_date }}{% else %}Not returned{% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

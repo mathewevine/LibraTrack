@@ -1,0 +1,17 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibraTrack</title>
+</head>
+<body>
+    <h1>Library Inventory</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - {{ book.author }} - {% if book.status %}Available{% else %}Not Available{% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

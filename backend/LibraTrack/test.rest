@@ -1,0 +1,51 @@
+# Signup
+POST http://127.0.0.1:8000/LibraTrack/signup/
+Content-Type: application/json
+X-CSRFToken: b4g4zhIbTyPYSUkBqtrdRJfuTskQ46fn
+
+{"registerNo": 67891, "loginPassword": "12345", "loginConfPassword": "12345"}
+
+#####
+# Login
+GET http://127.0.0.1:8000/LibraTrack/login/?register_no=67891
+
+
+#####
+#Adding Book
+POST http://127.0.0.1:8000/LibraTrack/addBook/
+Content-Type: application/json
+
+{"bookId": 1, 
+"title": "History of Ideas", 
+"author": "R.D. Dikshit", 
+"department": "ebook", 
+"publisherName": "mohit publications", 
+"status": "True", 
+"price": 325,
+"ebookURL": "https://www.dropbox.com/sh/d6plg2q4oydvpcs/AABzKPp1rA2IcBOHJgeDfw8-a/Archivos%20Infobooks%20ING/Temas%20%28Continuaci%C3%B3n%29/35%20Libros%20de%20fisica%20acustica/1.%20The%20Physics%20of%20Sound%20Author%20Western%20Michigan%20University.pdf?dl=0"}
+
+#####
+# Get All Books
+GET http://127.0.0.1:8000/LibraTrack/books/
+
+#####
+# Renting a Book
+POST http://127.0.0.1:8000/LibraTrack/rentBook/
+Content-Type: application/json
+
+{
+    "bookId": 10900,
+    "registerNo": 12348
+}
+
+#####
+# Get all users
+GET http://127.0.0.1:8000/LibraTrack/users/
+
+#####
+# Get All rented Books
+GET http://127.0.0.1:8000/LibraTrack/rentedBooks/
+
+#####
+# csrf token generation
+GET Http://127.0.0.1:8000/LibraTrack/csrf-token/
